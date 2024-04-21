@@ -5,6 +5,7 @@ import { FormControl, FormsModule, ReactiveFormsModule,FormGroup, Validators, Fo
 import { TypecontactService } from '../../core/services/typecontact.service';
 import { ITypeContacts } from '../../interface/typecontacts';
 import { EMPTY, catchError } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class FormContactComponent implements OnInit   {
 
   @Input() typeform = '';
   contactType: ITypeContacts[]=[];
+  private modalService = inject(NgbModal);
   public errorMessage!:string;
   contactsform = new FormGroup({
     typecontactid: new FormControl(1,[Validators.required]),
@@ -118,6 +120,7 @@ export class FormContactComponent implements OnInit   {
       
       this.service.update(this.idContact, data).subscribe({next:(value)=> {
         console.log("editado");
+        this.modalService.dismissAll();
         this.valEvent.emit(true)
       }});
   

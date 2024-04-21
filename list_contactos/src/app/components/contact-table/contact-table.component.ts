@@ -7,11 +7,12 @@ import { ITypeContacts } from '../../interface/typecontacts';
 import { TypecontactService } from '../../core/services/typecontact.service';
 import { NotifyrefreshService } from '../../core/services/notifyrefresh.service';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-table',
   standalone: true,
-  imports: [ModalActionComponent],
+  imports: [ModalActionComponent,FormsModule,ReactiveFormsModule],
   templateUrl: './contact-table.component.html',
   styleUrl: './contact-table.component.css'
 })
@@ -20,10 +21,16 @@ export class ContactTableComponent implements OnInit {
   typecontacts: ITypeContacts[]=[];
   subscription!: Subscription;
   validarCambio= false ;
+  filterOption= new FormGroup({
+    id: new FormControl(0)
+  });
+  option=0;
+
+
   constructor(private service: ContactService, private typeservice: TypecontactService){}
   ngOnInit(): void {
     this.loadContacts();
-   
+    this.getTypes();
   }
 
   refresh(valid:boolean){
@@ -59,4 +66,21 @@ getTypeContact(){
     
   }
 }
+
+getTypes(){
+  this.typeservice.getAll().subscribe(
+  {next: (data)=>{
+    this.typecontacts=data;
+  },error(Err){
+    console.log(Err)
+  }
+})
+}
+  filter(){
+    
+     this.option= parseInt(this.filterOption.value.id!.toString(),10);
+    console.log(this.option);
+  
+  }
+
 }

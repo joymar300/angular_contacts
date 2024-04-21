@@ -13,7 +13,7 @@
         </div> -->
     </ng-template>
     
-    <button class="btn {{color}}" (click)="open(content)">{{name}}</button>
+    <button class="btn {{color}}" (click)="open(content)"><i class="bi bi-pencil"></i></button>
 }@else if (name=== "crear"){
     <ng-template #content let-modal>
         <div class="modal-header">
@@ -27,7 +27,7 @@
             <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
         </div> -->
     </ng-template>
-    <button class="btn {{color}}" (click)="open(content)">{{name}}</button>
+    <button class="btn {{color}}" (click)="open(content)"><i class="bi bi-person-plus-fill"></i></button>
 
  }@else if (name === "eliminar") {
     <ng-template #content let-modal>
@@ -55,7 +55,7 @@
 		</div>
     </ng-template>
     
-    <button class="btn {{color}}" (click)="open(content)">{{name}}</button>
+    <button class="btn {{color}}" (click)="open(content)"><i class="bi bi-person-dash"></i></button>
 
 } @else if (name === 'login') {
     <ng-template #content let-modal>
