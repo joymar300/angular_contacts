@@ -1,0 +1,41 @@
+<div class="container">
+
+    <div class="">
+        <app-modal-action name="crear" (confirForm)="refresh($event)"  color="btn-primary"/>   
+    </div>
+    <table class="table text-center table-striped">
+        <thead>
+            <tr>
+                <td>tip</td>
+                <td>name</td>
+                <td>number</td>
+                <td>coment</td>
+                <td>infor1</td>
+                <td>info2</td>
+                <td colspan="2" > actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if ( contacts ) {
+                @for (item of contacts; track item.contactid) {
+                    
+                    <tr>
+                        <td>{{ item.typecontact}}</td>
+                        <td>{{ item.name}}</td>
+                        <td>{{ item.phonenum}}</td>
+                        <td>{{ item.comment}}</td>
+                        <td>{{ item.infoextra1}}</td>
+                        <td>{{ item.infoextra2}}</td>
+                        <td><app-modal-action name="editar" color="btn-warning" (confirForm)="refresh($event)" idContact={{item.contactid}} /></td>
+                        <td><app-modal-action name="eliminar" color="btn-danger" idContact={{item.contactid}} (confirmEvent)="refresh($event)"/></td>
+                    </tr>
+                }
+            }
+            <tr>
+
+                
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
