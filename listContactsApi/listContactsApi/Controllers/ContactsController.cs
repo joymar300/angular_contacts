@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using listContactsApi.Data;
 using listContactsApi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace listContactsApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class ContactsController : ControllerBase
     {
         private readonly AppDbContext _context;

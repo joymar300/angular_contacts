@@ -1,10 +1,8 @@
 ﻿namespace listContactsApi.Entities
 {
-    public class User
+    public class LoginDto
     {
-        public int userid { get; set; }
         public string email { get; set; }
-
         public string password { get; set; }
     }
 }

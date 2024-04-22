@@ -1,4 +1,7 @@
+using listContactsApi.Controllers;
 using listContactsApi.Data;
+using listContactsApi.Entities;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,10 +11,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace listContactsApi
@@ -30,22 +37,87 @@ namespace listContactsApi
         {
             services.AddCors(options =>
             {
-                
-                options.AddPolicy("AllowOrigin",//aceptar peticiones desde el localhost de angular
+                options.AddPolicy("AllowAll",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200")
-                            .AllowAnyHeader()
-                            .AllowAnyMethod();
+                        builder
+                            .AllowAnyOrigin() // Permitir cualquier origen
+                            .AllowAnyMethod() // Permitir cualquier método (GET, POST, PUT, etc.)
+                            .AllowAnyHeader() // Permitir cualquier encabezado
+                            .WithExposedHeaders("Authorization"); // Exponer el encabezado de autorización en las respuestas
                     });
             });
-            services.AddSwaggerGen(c =>
+            var key = services.Configure<JwtOption>(Configuration.GetSection("Jwt:key")).ToString();
+
+            services.AddAuthentication(options =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "List_contacts_api", Version = "v1" });
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>{
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = false,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    ValidAudience = Configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:key"]))
+                };
             });
+            services.AddSwaggerGen(s =>
+            {
+                s.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Chat API",
+                    Description = "Chat API Swagger Surface",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "João Victor Ignacio",
+                        Email = "ignaciojvig@gmail.com",
+                        Url = new Uri("https://www.linkedin.com/in/ignaciojv/")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "MIT",
+                        Url = new Uri("https://github.com/ignaciojvig/ChatAPI/blob/master/LICENSE")
+                    }
+
+                });
+
+                s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer 12345abcdef')",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                s.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    Array.Empty<string>()
+                }
+            });
+
+            });
+
             services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllers();
+            services.AddScoped<UsersController>();
+            services.Configure<JwtOption>(Configuration.GetSection("Jwt"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,13 +132,14 @@ namespace listContactsApi
                 });
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("AllowOrigin");
+            app.UseCors("AllowAll");
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {

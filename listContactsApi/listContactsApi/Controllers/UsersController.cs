@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using listContactsApi.Data;
 using listContactsApi.Entities;
 
+
 namespace listContactsApi.Controllers
 {
     [Route("api/[controller]")]
@@ -106,5 +107,14 @@ namespace listContactsApi.Controllers
         {
             return _context.users.Any(e => e.userid == id);
         }
+
+        [HttpGet("{email}")]
+        public async Task<User> getUserByEmail(string email)
+        {
+            return await _context.users.Where(x=>x.email==email).FirstOrDefaultAsync();
+        }
+
+
+       
     }
 }

@@ -341,3 +341,4 @@ C:\Users\jyornno\Documents\GitHub\angular_contacts\listContactsApi\listContactsA
 C:\Users\jyornno\Documents\GitHub\angular_contacts\listContactsApi\listContactsApi\obj\Debug\netcoreapp3.1\listContactsApi.dll
 C:\Users\jyornno\Documents\GitHub\angular_contacts\listContactsApi\listContactsApi\obj\Debug\netcoreapp3.1\listContactsApi.pdb
 C:\Users\jyornno\Documents\GitHub\angular_contacts\listContactsApi\listContactsApi\obj\Debug\netcoreapp3.1\listContactsApi.genruntimeconfig.cache
+C:\Users\jyornno\Documents\GitHub\angular_contacts\listContactsApi\listContactsApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
