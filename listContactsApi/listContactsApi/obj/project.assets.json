@@ -9628,11 +9628,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jyornno\\source\\repos\\listContactsApi\\listContactsApi\\listContactsApi.csproj",
+      "projectUniqueName": "C:\\Users\\jyornno\\Documents\\GitHub\\angular_contacts\\listContactsApi\\listContactsApi\\listContactsApi.csproj",
       "projectName": "listContactsApi",
-      "projectPath": "C:\\Users\\jyornno\\source\\repos\\listContactsApi\\listContactsApi\\listContactsApi.csproj",
+      "projectPath": "C:\\Users\\jyornno\\Documents\\GitHub\\angular_contacts\\listContactsApi\\listContactsApi\\listContactsApi.csproj",
       "packagesPath": "C:\\Users\\jyornno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jyornno\\source\\repos\\listContactsApi\\listContactsApi\\obj\\",
+      "outputPath": "C:\\Users\\jyornno\\Documents\\GitHub\\angular_contacts\\listContactsApi\\listContactsApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jyornno\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -21,6 +21,7 @@ export class ModalActionComponent {
   @Input() color='';
   @Output() confirmEvent = new EventEmitter<boolean>();
   @Output() confirForm = new EventEmitter<boolean>();
+  
 	open(content: TemplateRef<any>) {
 		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' })
 	}

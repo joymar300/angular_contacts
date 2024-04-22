@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QYwr6fBqzerWW9GDSFgFAZKlwykBTV92MoHI4GJns93ZDTuE0/50Fog0BbzucVjY3zaHCLjp5JQQryuBMedp2A==",
+  "dgSpecHash": "xZXw8IK305Ixb/UuVmVnqdjzxEdVouVTOyhKPt7oqpy6E8WT18tYiOIjSvh+rewbaMoq1M3Tz2Unr1ua7kqAtw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jyornno\\source\\repos\\listContactsApi\\listContactsApi\\listContactsApi.csproj",
+  "projectFilePath": "C:\\Users\\jyornno\\Documents\\GitHub\\angular_contacts\\listContactsApi\\listContactsApi\\listContactsApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jyornno\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\jyornno\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
