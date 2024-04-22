@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|solutionrelative:listcontactsapi\\controllers\\authscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|c:\\users\\jyornno\\documents\\github\\angular_contacts\\listcontactsapi\\listcontactsapi\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|solutionrelative:listcontactsapi\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|c:\\users\\jyornno\\documents\\github\\angular_contacts\\listcontactsapi\\listcontactsapi\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|solutionrelative:listcontactsapi\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|c:\\users\\jyornno\\documents\\github\\angular_contacts\\listcontactsapi\\listcontactsapi\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|solutionrelative:listcontactsapi\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|c:\\users\\jyornno\\documents\\github\\angular_contacts\\listcontactsapi\\listcontactsapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|solutionrelative:listcontactsapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|c:\\users\\jyornno\\documents\\github\\angular_contacts\\listcontactsapi\\listcontactsapi\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|solutionrelative:listcontactsapi\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|c:\\users\\jyornno\\documents\\github\\angular_contacts\\listcontactsapi\\listcontactsapi\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|solutionrelative:listcontactsapi\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9613AE7-B1B1-47A9-BBC9-F6CE51B024EC}|listContactsApi\\listContactsApi.csproj|c:\\users\\jyornno\\documents\\github\\angular_contacts\\listcontactsapi\\listcontactsapi\\entities\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +82,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\jyornno\\Documents\\GitHub\\angular_contacts\\listContactsApi\\listContactsApi\\Startup.cs",
               "RelativeDocumentMoniker": "listContactsApi\\Startup.cs",
@@ -90,12 +90,11 @@
               "RelativeToolTip": "listContactsApi\\Startup.cs",
               "ViewState": "AQIAACsAAAAAAAAAAAAqwI4AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T01:44:31.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T01:44:31.673Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\jyornno\\Documents\\GitHub\\angular_contacts\\listContactsApi\\listContactsApi\\Models\\AppDbContext.cs",
               "RelativeDocumentMoniker": "listContactsApi\\Models\\AppDbContext.cs",
@@ -115,12 +114,11 @@
               "RelativeToolTip": "listContactsApi\\Controllers\\UsersController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T01:57:31.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T01:57:31.113Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ContactsController.cs",
               "DocumentMoniker": "C:\\Users\\jyornno\\Documents\\GitHub\\angular_contacts\\listContactsApi\\listContactsApi\\Controllers\\ContactsController.cs",
               "RelativeDocumentMoniker": "listContactsApi\\Controllers\\ContactsController.cs",
@@ -128,8 +126,7 @@
               "RelativeToolTip": "listContactsApi\\Controllers\\ContactsController.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T15:34:35.741Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-19T15:34:35.741Z"
             },
             {
               "$type": "Document",
@@ -199,7 +196,7 @@
               "RelativeDocumentMoniker": "listContactsApi\\Controllers\\AuthsController.cs",
               "ToolTip": "C:\\Users\\jyornno\\Documents\\GitHub\\angular_contacts\\listContactsApi\\listContactsApi\\Controllers\\AuthsController.cs",
               "RelativeToolTip": "listContactsApi\\Controllers\\AuthsController.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAjwCkAAABWAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAjwDEAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T01:28:47.651Z",
               "EditorCaption": ""

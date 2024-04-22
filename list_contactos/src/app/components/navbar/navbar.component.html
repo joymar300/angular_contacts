@@ -1,17 +1,13 @@
 <nav class="navbar  navbar-expand-lg shadow" style="background-color: #20a7e6">
     <div class="container-fluid">
-      <div class="d-flex justify-content-between">
+     
         <div class="col-auto">
 
           <a class="navbar-brand" style="color: azure;">Contacts</a>
         </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
+
         
         <div class="d-flex  ">
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             @if (valid) {
               
               <button class="btn btn-danger" (click)="logout()"> log out</button>
@@ -19,11 +15,11 @@
               
               <app-modal-action name="login" color="btn btn-light mt-2" />
             }
-          </div>
+        
         </div>     <!-- <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form> -->
-      </div>
+  
     </div>
   </nav>

@@ -12,9 +12,10 @@ import { AppComponent } from '../../app.component';
   styleUrl: './form-login.component.css'
 })
 export class FormLoginComponent {
+  errorAlert= false;
   logdata = new FormGroup({
   
-    email: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required]),
    
   })
@@ -22,12 +23,18 @@ export class FormLoginComponent {
   constructor(private service: UserService){}
 
   login(){
-    const email = this.logdata.value.email!;
-    const password = this.logdata.value.password!;
-    this.service.loginjwt(email,password).subscribe((res)=>{
-      console.log(res);
-      localStorage.setItem("token", res.token);
-      window.location.reload();
-    });
+    if(this.logdata.valid){
+
+      const email = this.logdata.value.email!;
+      const password = this.logdata.value.password!;
+      this.service.loginjwt(email,password).subscribe({next(res) {
+        localStorage.setItem("token", res.token);
+        window.location.reload();
+      },error(err) {
+        alert( "no found")
+      },});
+    }
   }
+
+  
 }
