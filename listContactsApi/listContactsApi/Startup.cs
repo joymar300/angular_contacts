@@ -47,22 +47,24 @@ namespace listContactsApi
                             .WithExposedHeaders("Authorization"); // Exponer el encabezado de autorización en las respuestas
                     });
             });
-            var key = services.Configure<JwtOption>(Configuration.GetSection("Jwt:key")).ToString();
-
+            var key = Configuration.GetSection("Jwt:Key").Get<string>();
+            services.Configure<JwtOption>(Configuration.GetSection("Jwt"));
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>{
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     ValidateLifetime = false,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = Configuration["Jwt:Issuer"],
-                    ValidAudience = Configuration["Jwt:Issuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:key"]))
+                    //ValidIssuer = Configuration["Jwt:Issuer"],
+                    //ValidAudience = Configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key))
                 };
             });
             services.AddSwaggerGen(s =>
@@ -138,6 +140,7 @@ namespace listContactsApi
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
             
 

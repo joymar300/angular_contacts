@@ -13,7 +13,7 @@ namespace listContactsApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    
+    [Authorize]
     public class ContactsController : ControllerBase
     {
         private readonly AppDbContext _context;

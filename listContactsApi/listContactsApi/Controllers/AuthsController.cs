@@ -49,7 +49,7 @@ namespace listContactsApi.Controllers
             var stoken= new JwtSecurityToken(_option.Key,_option.Issuer, claims, expires:DateTime.Now.AddHours(5),signingCredentials: credential);
             var token = new JwtSecurityTokenHandler().WriteToken(stoken);
             //var token = GenerateJwtToken(model.email) ;
-            return Ok(token);
+            return Ok(new { token=token });
             }
 
         //private string GenerateJwtToken(string username)

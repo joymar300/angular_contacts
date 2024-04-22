@@ -13,6 +13,7 @@ namespace listContactsApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class UsersController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -23,11 +24,11 @@ namespace listContactsApi.Controllers
         }
 
         // GET: api/Users
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> Getusers()
-        {
-            return await _context.users.ToListAsync();
-        }
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<User>>> Getusers()
+        //{
+        //    return await _context.users.ToListAsync();
+        //}
 
         // GET: api/Users/5
         [HttpGet("{id}")]
@@ -114,7 +115,17 @@ namespace listContactsApi.Controllers
             return await _context.users.Where(x=>x.email==email).FirstOrDefaultAsync();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetUserByNameAndPassword([FromQuery] string email, [FromQuery] string password)
+        {
+            var user = await _context.users.FirstOrDefaultAsync(u=> u.email == email && u.password==password);
+            if (user == null)
+            {
+                return NotFound();
+            }
 
-       
+            return Ok(user);
+        }
+
     }
 }
