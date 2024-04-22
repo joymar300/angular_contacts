@@ -12,7 +12,7 @@ import { AppComponent } from '../../app.component';
   styleUrl: './form-login.component.css'
 })
 export class FormLoginComponent {
-  errorAlert= false;
+  error= false;
   logdata = new FormGroup({
   
     email: new FormControl('',[Validators.required, Validators.email]),
@@ -27,14 +27,16 @@ export class FormLoginComponent {
 
       const email = this.logdata.value.email!;
       const password = this.logdata.value.password!;
-      this.service.loginjwt(email,password).subscribe({next(res) {
+      this.service.loginjwt(email,password).subscribe({next:(res)=> {
         localStorage.setItem("token", res.token);
         window.location.reload();
-      },error(err) {
-        alert( "no found")
-      },});
+      }, error(err){
+        alert("no found")
+      }
+    });
+    }else{
+      this.error= true;
     }
   }
-
   
 }
