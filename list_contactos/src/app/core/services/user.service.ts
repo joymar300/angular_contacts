@@ -18,7 +18,5 @@ export class UserService {
     });
   }
 
-  login(email:string, password:string):Observable<IUser>{
-    return this.http.get<IUser>(`${urlbase}Users?email=${email}&password=${password}`);
-  }
+
 }
